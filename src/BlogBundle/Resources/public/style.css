@@ -1,0 +1,12 @@
+#log{width:820px;text-align:left;margin:0;padding:2px 50px 2px;background:#333;color:#ccc;}
+#log a,#log a:visited,#log a:active,#log a:hover {color:#ccc;}
+body{text-align:center;margin:auto;width:820px;height:100%;color:#444;background:#fff;}
+#body{background:#eee;width:820px;padding: 100px 50px 20px;height:100%;}
+h2{margin: 0 0 100px;color:#333}
+hr{width:200px;margin-bottom:30px;}
+#content{text-align:left;min-height:250px;}
+#footer{background:#333;width:820px;padding: 50px 50px 50px;text-align:center;color:#ccc;}
+a,a:visited,a:active,a:hover{text-decoration:underline;color:#444;}
+h3{margin-top:50px;}
+.u, .u:visited, .u:active, .u:hover {color:red;}
+#pagination{text-align:center;margin: 45px auto 10px;font-size:20px}

@@ -1,0 +1,4 @@
+services:
+    add_post:
+        class: BlogBundle\Services\Addpost
+        arguments: ["Tytuł nowego posta", "Tutaj wpisz treść nowego posta..."]

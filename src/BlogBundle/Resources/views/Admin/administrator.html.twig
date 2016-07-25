@@ -1,0 +1,26 @@
+{% extends 'BlogBundle::blog.html.twig' %}
+        {% block head %}  
+            <h2>Panel Administracyjny Bloga</h2>      
+        {% endblock %}
+        
+        {% block content %}
+        <h3>Dodaj posta</h3>
+          {{ form_start(form) }}
+            {{ form_errors(form) }}
+
+            <table><tr>
+              <td>{{ form_label(form.title, 'Tytuł: ') }}</td>
+              <td>{{ form_widget(form.title, { 'attr': { 'style': 'width:500px;' } }) }}</td>
+              <td>{{ form_errors(form.title) }}</td>
+            </tr><tr>
+              <td style="vertical-align: top;">{{ form_label(form.content, 'Treść: ') }}</td>
+              <td>{{ form_widget(form.content, { 'attr': { 'style': 'width:500px;height:190px' } }) }}</td>
+              <td>{{ form_errors(form.content) }}</td>
+            </tr><tr><td></td>
+              <td style="text-align:right">{{ form_widget(form.add, { 'label': 'Dodaj posta' }) }}</td><td></td>
+            </tr></table>
+            
+          {{ form_end(form) }}
+        <br /><br />
+        Usuwanie postów znajduje się na stronie głównej - <a href="{{ path('index') }}">Przejdź</a>
+        {% endblock %}

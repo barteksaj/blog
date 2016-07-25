@@ -1,0 +1,27 @@
+{% extends ':Blog:index.html.twig' %}
+{% block style %}<link href="{{ asset('bundles/blog/style.css') }}" rel="stylesheet" />{% endblock %}
+
+{% block body %}
+  <div id="log">
+        <a href="{{ path('index') }}">Strona Główna</a> || 
+        {% if is_granted('ROLE_ADMIN') %}
+            <a href="{{ path('administrator') }}">Panel administracyjny</a> || 
+            Jesteś zalogowany - <a href="{{ path('logout') }}">Wyloguj się</a>
+        {% else %}
+            Nie jesteś zalogowany - <a href="{{ path('administrator') }}">Zaloguj się</a>
+        {% endif %}
+  </div>
+  <div id="body">
+        {% block head %}  
+            <h2>Nowy blog o Frameworku PHP - Symfony 3.0</h2>      
+        {% endblock %}
+        <hr />
+        
+        <div id="content">{% block content %}{% endblock %}</div>
+  </div>         
+  <div id="footer">
+    {% block footer %}
+        Strona stworzona za pomocą frameworka Symfony 3.0
+    {% endblock %}
+  </div>
+{% endblock %}     

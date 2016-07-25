@@ -1,0 +1,31 @@
+{% extends 'BlogBundle::blog.html.twig' %}
+        {% block head %}  
+            <h2>Zaloguj się do panelu administracyjnego</h2>      
+        {% endblock %}
+        
+        {% block content %}
+
+
+
+
+{% if error %}
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+
+
+<form action="{{ path('login') }}" method="post">
+<table style="text-align:center;margin: 70px auto 0;"><tr style="text-align:left">
+    <td><label for="username">Login:</label></td>
+    <td><input type="text" id="username" name="_username" value="{{ last_username }}" /></td></tr>
+
+    <tr><td><label for="password">Hasło:</label></td>
+    <td><input type="password" id="password" name="_password" /></td></tr>
+    
+    <tr><td></td><td style="text-align:right"><button type="submit">Zaloguj się</button></td>
+</tr></table>   
+</form>
+
+
+
+
+        {% endblock %}

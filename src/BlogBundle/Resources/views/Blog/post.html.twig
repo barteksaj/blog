@@ -1,0 +1,14 @@
+{% extends 'BlogBundle::blog.html.twig' %}
+
+{% block content %}
+  <h3>
+      {{ title }}
+      {% if is_granted('ROLE_ADMIN') %}
+           - <a class="u" href="{{ path('remove', {'id': id}) }}">Usuń</a>      
+      {% endif %}  
+  </h3>
+  {{ content }}
+  <br /><br /><a href="{{ path('index') }}"><< Wróć do Strony Głównej</a>
+
+
+{% endblock %}

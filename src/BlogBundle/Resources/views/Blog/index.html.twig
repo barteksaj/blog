@@ -1,0 +1,24 @@
+{% extends 'BlogBundle::blog.html.twig' %}
+
+{% block content %}
+
+
+  {% for article in pagination %}
+    <h3>
+        <a href="{{ path('post', {'id': article.id}) }}">{{ article.title }}</a>
+        {% if is_granted('ROLE_ADMIN') %}
+             - <a class="u" href="{{ path('remove', {'id': article.id}) }}">Usuń</a>      
+        {% endif %}
+    </h3>
+    {{ article.content[0:99] }}
+    ...<a href="{{ path('post', {'id': article.id}) }}">Czytaj dalej >></a>
+  {% endfor %}
+
+
+  <div id="pagination">
+    {{ knp_pagination_render(pagination) }}
+  </div>
+
+
+
+{% endblock %}
